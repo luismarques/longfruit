@@ -205,10 +205,10 @@ def instr_cost(line):
     }[instr]
 
 def compile(compiler, arch, abi, filename):
-    if compiler == 'gcc':
+    if compiler.endswith('gcc'):
         prog = 'riscv64-unknown-linux-gnu-gcc'
         opts = []
-    elif compiler == 'clang':
+    elif compiler.endswith('clang'):
         prog = 'clang'
         opts = [
             '-Wno-literal-conversion',
